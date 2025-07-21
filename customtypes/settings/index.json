@@ -54,7 +54,7 @@
                             "config": {
                                 "label": "CTA Button",
                                 "default_value": false,
-                                "placeeholder_true": "true",
+                                "placeholder_true": "true",
                                 "placeholder_false": "false"
                             }
                         }

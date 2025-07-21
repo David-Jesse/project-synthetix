@@ -100,11 +100,11 @@ interface PageDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page for social media and search engines
-   * - **API ID Path**: page.metaa_title
+   * - **API ID Path**: page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/fields/text
    */;
-  metaa_title: prismic.KeyTextField;
+  meta_title: prismic.KeyTextField;
 
   /**
    * Meta Description field in *Page*
@@ -122,11 +122,11 @@ interface PageDocumentData {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.meta-image
+   * - **API ID Path**: page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  "meta-image": prismic.ImageField<never>;
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
