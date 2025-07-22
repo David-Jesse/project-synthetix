@@ -96,13 +96,17 @@ const Navbar = ({ settings }: NavbarProps) => {
               href="https://linkedin.com"
               className="opacity-50 transition-all hover:opacity-100"
             >
-            <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">                src={linkedIn}
-                alt="linkedin"
-                width={300}
-                height={300}
-                className="min-h-5 max-w-5 md:min-h-6 md:max-w-6"
-              />
-            </a>            <a
+              <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">
+                <Image
+                  src={linkedIn}
+                  alt="linkedin"
+                  width={300}
+                  height={300}
+                  className="min-h-5 max-w-5 md:min-h-6 md:max-w-6"
+                />
+              </div>
+            </a>
+            <a
               href="https://twitter.com"
               className="opacity-50 transition-all hover:opacity-100"
             >
