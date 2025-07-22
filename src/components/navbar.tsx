@@ -12,11 +12,11 @@ import { PrismicNextLink } from "@prismicio/next";
 import Linker, { handleScroll } from "./linker";
 import { AnimatePresence, motion } from "framer-motion";
 
-type NabvarProps = {
+type NavbarProps = {
   settings: Content.SettingsDocument;
 };
 
-const Navbar = ({ settings }: NabvarProps) => {
+const Navbar = ({ settings }: NavbarProps) => {
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
@@ -93,18 +93,16 @@ const Navbar = ({ settings }: NabvarProps) => {
             className="absolute bottom-[42px] left-0 right-0 mx-auto flex h-[20px] w-max items-center justify-around gap-[30px] md:bottom-[45px] md:gap-[34px]"
           >
             <a
-              href="https://linkedin..com"
+              href="https://linkedin.com"
               className="opacity-50 transition-all hover:opacity-100"
             >
-              <Image
-                src={linkedIn}
+            <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">                src={linkedIn}
                 alt="linkedin"
                 width={300}
                 height={300}
                 className="min-h-5 max-w-5 md:min-h-6 md:max-w-6"
               />
-            </a>
-            <a
+            </a>            <a
               href="https://twitter.com"
               className="opacity-50 transition-all hover:opacity-100"
             >
@@ -140,7 +138,7 @@ const Navbar = ({ settings }: NabvarProps) => {
           className={`min-h-[2px] w-[15px] rounded-full bg-white transition-all duration-500 ${openNav ? "-mb-1.5 rotate-45" : ""}`}
         />
         <div
-          className={`min-h-2px w-15 rounded-full bg-white transition-all duration-500 ${openNav ? "opacity-0" : ""}`}
+          className={`min-h-2px w-[15px] rounded-full bg-white transition-all duration-500 ${openNav ? "opacity-0" : ""}`}
         />
         <div
           className={`min-h-[2px] w-[15px] rounded-full bg-white transition-all duration-500 ${openNav ? "mb-1.5 -rotate-45" : ""}`}
@@ -171,7 +169,7 @@ const Navbar = ({ settings }: NabvarProps) => {
       </Link>
 
       <a href="/" className="flex w-min items-center justify-center md:hidden">
-        <div className="f;ex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">
+        <div className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-gradient-to-b from-[#ff6d00]/10 to-[#ff6d00]/[50%] outline-2 -outline-offset-[2px] outline-white/[12%] backdrop-blur-[50px] transition-all duration-300 hover:bg-[#ff6d00]/60">
           <Image
             src={Logo}
             alt="logo"
