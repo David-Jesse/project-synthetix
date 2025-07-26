@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type PageDocumentDataSlicesSlice = AboutUsSlice | HeroSlice;
+type PageDocumentDataSlicesSlice = CallToActionSlice | AboutUsSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -345,6 +345,101 @@ export type AboutUsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Heading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Contact field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.contact
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contact: prismic.RichTextField;
+
+  /**
+   * About field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.about
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  about: prismic.RichTextField;
+
+  /**
+   * ImageLeft field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageCenter field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.imagecenter
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imagecenter: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  imageright: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -469,6 +564,10 @@ declare module "@prismicio/client" {
       AboutUsSliceDefaultItem,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
