@@ -20,9 +20,9 @@ export const repositoryName =
  *
  * {@link https://prismic.io/docs/route-resolver#route-resolver}
  */
+
 // TODO: Update the routes array to match your project's route structure.
 const routes: Route[] = [
-  // Examples:
   { type: "page", path: "/", uid: "home" },
   { type: "page", path: "/:uid" },
 ];
@@ -43,7 +43,7 @@ export const createClient = ({
     ...config,
   });
 
-  enableAutoPreviews({ client, previewData, req });
+  enableAutoPreviews({ client});
 
   return client;
 };

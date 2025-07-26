@@ -69,41 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type AboutusDocumentDataSlicesSlice = never;
-
-/**
- * Content for AboutUs documents
- */
-interface AboutusDocumentData {
-  /**
-   * `slices` field in *AboutUs*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: aboutus.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/slices
-   */
-  slices: prismic.SliceZone<AboutusDocumentDataSlicesSlice>;
-}
-
-/**
- * AboutUs document from Prismic
- *
- * - **API ID**: `aboutus`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/content-modeling
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type AboutusDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<AboutusDocumentData>,
-    "aboutus",
-    Lang
-  >;
-
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = AboutUsSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -133,7 +99,7 @@ interface PageDocumentData {
    * Meta Title field in *Page*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A title of the page for social media and search engines
+   * - **Placeholder**: A title of the page used for social media and search engines
    * - **API ID Path**: page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/fields/text
@@ -205,10 +171,10 @@ export interface SettingsDocumentDataNavigationItem {
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: settings.navigation[].cta-button
+   * - **API ID Path**: settings.navigation[].cta_button
    * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
-  "cta-button": prismic.BooleanField;
+  cta_button: prismic.BooleanField;
 }
 
 /**
@@ -276,10 +242,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes =
-  | AboutusDocument
-  | PageDocument
-  | SettingsDocument;
+export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
  * Primary content in *AboutUs → Default → Primary*
@@ -381,6 +344,98 @@ export type AboutUsSlice = prismic.SharedSlice<
   AboutUsSliceVariation
 >;
 
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Heading field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * body field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * body field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.contact_button
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  contact_button: prismic.RichTextField;
+
+  /**
+   * Services Button field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.services_button
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  services_button: prismic.RichTextField;
+
+  /**
+   * Image field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image2 field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.image2
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image2: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -402,9 +457,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      AboutusDocument,
-      AboutusDocumentData,
-      AboutusDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -417,6 +469,10 @@ declare module "@prismicio/client" {
       AboutUsSliceDefaultItem,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }

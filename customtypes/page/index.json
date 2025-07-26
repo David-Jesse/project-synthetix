@@ -9,7 +9,7 @@
       "uid": {
         "type": "UID",
         "config": {
-          "label": "UID",
+          "label": "uid",
           "placeholder": ""
         }
       },
@@ -26,7 +26,14 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "about_us": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
@@ -35,7 +42,7 @@
         "type": "Text",
         "config": {
           "label": "Meta Title",
-          "placeholder": "A title of the page for social media and search engines"
+          "placeholder": "A title of the page used for social media and search engines"
         }
       },
       "meta_description": {
@@ -52,7 +59,8 @@
           "constraint": {
             "width": 2400,
             "height": 1260
-          }
+          },
+          "thumbnails": []
         }
       }
     }
