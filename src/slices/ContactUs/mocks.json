@@ -1,0 +1,108 @@
+[
+    {
+        "__TYPE__": "SharedSliceContent",
+        "variation": "default",
+        "primary": {
+            "heading": {
+                "__TYPE__": "SharedSliceContent",
+                "value": [
+                    {
+                        "type": "heading2",
+                        "content": {
+                            "text": "Riding"
+                        }
+                    }
+                ]
+            },
+            "tag": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                    {
+                        "type": "heading5",
+                        "content": {
+                            "text": "Prove"
+                        }
+                    }
+                ]
+            },
+            "cta": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                    {
+                        "type": "heading3",
+                        "content": {
+                            "text": "Enjoy"
+                        }
+                    }
+                ]
+            },
+            "body": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                    {
+                        "type": "paragraph",
+                        "content": {
+                            "text": "Ullamco excepteur excepteur enim est. Dolor amet consectetur in reprehenderit ad. Dolor labore occaecat incididunt exercitation."
+                        }
+                    }
+                ]
+            },
+            "image": {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                    "id": "main",
+                    "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+                    "width": 5616,
+                    "height": 3744
+                },
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+                "width": 5616,
+                "height": 3744,
+                "edit": {
+                    "zoom": 1,
+                    "crop": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "background": "transparent"
+                },
+                "thumbnails": {}
+            }
+        },
+        "items": [
+            {
+                "__TYPE__": "GroupItemContent",
+                "value": [
+                    [
+                        "details",
+                        {
+                            "__TYPE__": "StructuredTextContent",
+                            "value": [
+                                {
+                                    "type": "heading5",
+                                    "content": {
+                                        "text": "Between"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    [
+                        "value",
+                        {
+                            "__TYPE__": "StructuredTextContent",
+                            "value": [
+                                {
+                                    "type": "paragraph",
+                                    "content": {
+                                        "text": "Quis ut culpa pariatur. Dolore excepteur excepteur enim est. Dolor amet consectetur in reprehenderit ad. Dolor labore occaecat incididunt exercitation."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+]
